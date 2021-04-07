@@ -1,0 +1,31 @@
+.partner-con {
+	background: url(../images/ref_banner3.jpg) no-repeat center / cover fixed;
+	padding: 5rem;
+	min-height: 50vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.partner-img-con {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	img {
+		max-height: 100px;
+		max-width: 200px;
+		margin: 2rem 1rem 0 1rem;
+		&:hover {
+			transform: scale(1.03);
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.partner-con {
+		padding: 5rem 2rem;
+	}
+}

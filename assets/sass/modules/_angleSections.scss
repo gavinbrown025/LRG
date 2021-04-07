@@ -1,0 +1,109 @@
+.angle-con {
+	background: $white;
+	position: relative;
+	min-height: 66vh;
+	display: flex;
+
+	.angle-img {
+		position: absolute;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		height: 100%;
+		width: 40%;
+
+		img {
+			max-height: 100%;
+			max-width: 100%;
+		}
+
+		&.left {
+			left: -10%;
+			opacity: 0;
+		}
+
+		&.right {
+			right: -10%;
+			opacity: 0;
+		}
+
+		&.sleeve {
+			justify-content: flex-start;
+		}
+	}
+
+	.angle-info {
+		@include redGradient();
+		display: flex;
+		padding: 5rem;
+		flex-direction: column;
+		justify-content: center;
+		h2 {
+			margin-bottom: 1.5rem;
+		}
+		h3 {
+			@include headerFont(1.5rem);
+		}
+		p {
+			margin-bottom: 1.5rem;
+		}
+
+		&.right {
+			padding-left: 45%;
+			clip-path: polygon(30% 0, 100% 0%, 100% 100%, 15% 100%);
+		}
+
+		&.left {
+			padding-right: 45%;
+			clip-path: polygon(0 0, 85% 0, 70% 100%, 0 100%);
+		}
+	}
+}
+
+.quote-con {
+	min-height: 25vh;
+	background: url(../images/ref_banner2.jpg) no-repeat center / cover fixed;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	p {
+		@include copyFont(1.75rem, false, i);
+		line-height: 2rem;
+	}
+}
+
+@media screen and (max-width: 880px) {
+	.angle-con {
+		.angle-img {
+			display: none;
+		}
+		.angle-info {
+			background: url(../images/ref_banner6.jpg) no-repeat center / cover fixed;
+			padding: 5rem;
+			&.right,
+			&.left {
+				padding: 5rem;
+				clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+			}
+			&.left {
+				background: url(../images/red_ref_banner5.jpg) no-repeat center / cover fixed;
+			}
+			&.right .cta-button {
+				@include redGradient();
+			}
+		}
+	}
+
+	.quote-con {
+		display: none;
+	}
+}
+@media screen and (max-width: 550px) {
+	.angle-con .angle-info {
+		&.right,
+		&.left {
+			padding: 5rem 2rem;
+		}
+	}
+}

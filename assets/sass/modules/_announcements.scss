@@ -1,0 +1,34 @@
+.announcements-con{
+    @include redGradient();
+    min-height: 75vh;
+    padding:5rem;
+}
+
+.announcement{
+    position: relative;
+    padding:3rem 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    border-bottom: solid 2px $black;
+    h3{@include headerFont(2rem);}
+    p{padding-top:1rem;}
+    span{
+        @include copyFont();
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+}
+
+@media screen and (max-width:880px){
+    .announcements-con{
+      background: url(../images/ref_banner3.jpg) center right / cover;
+    }
+    .announcement{border-bottom: solid 2px $highlight;}
+}
+
+@media screen and (max-width:500px){
+    .announcements-con{padding: 5rem 2rem;}
+
+    .announcement{border-bottom: solid 2px $highlight;}
+}

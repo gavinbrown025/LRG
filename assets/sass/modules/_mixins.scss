@@ -1,0 +1,76 @@
+@import "../modules/_vars.scss";
+
+@mixin headerFont($size: false, $color: false, $style: false) {
+	@if $style {
+		font-style: italic;
+	} @else {
+		font-style: normal;
+	}
+	@if $color {
+		color: $color;
+	} @else {
+		color: $white;
+	}
+	@if $size {
+		font-size: $size;
+	} @else {
+		font-size: $header-size;
+	}
+	font-family: $header-font;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+}
+
+@mixin copyFont($size: false, $color: false, $style: false) {
+	@if $style {
+		font-style: italic;
+	} @else {
+		font-style: normal;
+	}
+	@if $color {
+		color: $color;
+	} @else {
+		color: $white;
+	}
+	@if $size {
+		font-size: $size;
+	} @else {
+		font-size: $copy-size;
+	}
+	font-family: $copy-font;
+	line-height: 1.5rem;
+	letter-spacing: 1px;
+}
+
+@mixin redGradient() {
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#a20808+0,f30c0c+100 */
+	background: rgb(162, 8, 8); /* Old browsers */
+	background: -moz-linear-gradient(-45deg, rgba(162, 8, 8, 1) 0%, rgba(243, 12, 12, 1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, rgba(162, 8, 8, 1) 0%, rgba(243, 12, 12, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, rgba(162, 8, 8, 1) 0%, rgba(243, 12, 12, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a20808', endColorstr='#f30c0c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@mixin blackGradient() {
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#403f3f+0,1e1e1e+100 */
+	background: rgb(64, 63, 63); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(64, 63, 63, 1) 0%, rgba(30, 30, 30, 1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(64, 63, 63, 1) 0%, rgba(30, 30, 30, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(64, 63, 63, 1) 0%, rgba(30, 30, 30, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#403f3f', endColorstr='#1e1e1e',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin pseudoLine() {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 3px;
+	background: $highlight;
+	transition: all 300ms ease-in-out;
+}
+
+@mixin drawLine() {
+	width: 100%;
+}

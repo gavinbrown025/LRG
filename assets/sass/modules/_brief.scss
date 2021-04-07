@@ -1,0 +1,54 @@
+.brief-con {
+	min-height: 50vh;
+	padding: 5rem;
+	background: url(../images/ref_banner.jpg) no-repeat center / cover fixed;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.brief-info {
+		width: 66%;
+		p {
+			margin: 1.5rem 0;
+		}
+	}
+	.cta-button {
+		@include redGradient();
+	}
+	&:nth-of-type(even) {
+		background: url(../images/ref_banner3.jpg) no-repeat center / cover fixed;
+	}
+}
+
+.includes {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	span {
+		@include copyFont(false, $highlight);
+		text-transform: uppercase;
+		margin-right: 1rem;
+	}
+}
+
+@media screen and (max-width: 880px) {
+	.brief-con {
+		background: url(../images/ref_banner8.jpg) no-repeat center right / cover fixed;
+		.brief-info {
+			width: unset;
+		}
+		.cta-button {
+			@include blackGradient();
+		}
+	}
+	.includes span {
+		color: $black;
+		font-weight: 700;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.brief-con {
+		padding: 5rem 2rem;
+	}
+}
